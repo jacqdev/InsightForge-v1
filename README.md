@@ -1,6 +1,6 @@
 # InsightForge 🔍📊
 
-Um pipeline de análise de dados que coleta informações, gera estatísticas e cria visualizações gráficas.  
+Um pipeline de análise de dados meteorológicos que coleta informações da API **Open-Meteo**, gera estatísticas e cria visualizações gráficas.  
 Projeto desenvolvido em Python com foco em **análise exploratória** e **visualização de dados**.
 
 ---
@@ -11,6 +11,7 @@ Projeto desenvolvido em Python com foco em **análise exploratória** e **visual
 - Visualização com gráficos (`visualizer.py`)
 - Execução centralizada (`main.py`)
 - Testes unitários com `pytest` (`tests/`)
+- Relatórios de cobertura com `pytest-cov`
 
 ---
 
@@ -21,6 +22,7 @@ Projeto desenvolvido em Python com foco em **análise exploratória** e **visual
 - Seaborn
 - Requests
 - Pytest
+- Pytest-cov
 
 ---
 
@@ -28,7 +30,11 @@ Projeto desenvolvido em Python com foco em **análise exploratória** e **visual
 Clone o repositório e instale as dependências:
 
 ```bash
-git clone https://github.com/seuusuario/InsightForge.git
-cd InsightForge
+git clone https://github.com/jacqdev/InsightForge-v1.git
+cd InsightForge-v1
 pip install -r requirements.txt
-"# InsightForge-v1" 
+
+    - name: 📤 Enviar cobertura para Codecov
+      uses: codecov/codecov-action@v4
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
